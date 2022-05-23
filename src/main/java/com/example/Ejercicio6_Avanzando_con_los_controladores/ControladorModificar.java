@@ -18,7 +18,8 @@ public class ControladorModificar {
         int aux=0;
         int pos=0;
 
-        for(Persona p: listaPersonas){
+        if(pers.getNombre() != null && pers.getPoblacion() != null && pers.getId() != 0 && pers.getEdad() != 0){    //Pongo que el ID y la EDAD sean distintos de 0 ya que si pongo en el JSON como null, lo pasa con valor 0 en vez de null al ser un INT
+            for(Persona p: listaPersonas){
                 if(p.getId()==id){
                     pers1=p;
                     aux=pos;
@@ -33,7 +34,9 @@ public class ControladorModificar {
             listaPersonas.remove(aux);
             listaPersonas.add(aux, pers1);
 
-        return "OK";
+            return "OK";
+        }else{
+            return "KO";
+        }
     }
-
 }
