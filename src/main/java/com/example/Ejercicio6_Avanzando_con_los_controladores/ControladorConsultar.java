@@ -24,6 +24,8 @@ public class ControladorConsultar {
                 sb.append(p.getNombre());
                 sb.append(", ");
                 sb.append(p.getEdad());
+                sb.append(", ");
+                sb.append(p.getPoblacion());
                 sb.append("\n");
             }
         }
@@ -40,6 +42,8 @@ public class ControladorConsultar {
                 sb.append(p.getNombre());
                 sb.append(", ");
                 sb.append(p.getEdad());
+                sb.append(", ");
+                sb.append(p.getPoblacion());
                 sb.append("\n");
             }
         }

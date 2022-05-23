@@ -9,6 +9,8 @@ public class Persona {
     protected String nombre;
     protected int edad;
 
+    protected String poblacion;
+
     public Persona() {}
 
     public int getId() {
@@ -23,6 +25,10 @@ public class Persona {
         return edad;
     }
 
+    public String getPoblacion() {
+        return poblacion;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -33,6 +39,10 @@ public class Persona {
 
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    public void setPoblacion(String poblacion) {
+        this.poblacion = poblacion;
     }
 
     @Override

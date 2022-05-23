@@ -28,6 +28,7 @@ public class ControladorModificar {
 
             pers1.setNombre(pers.getNombre());
             pers1.setEdad(pers.getEdad());
+            pers1.setPoblacion(pers.getPoblacion());
 
             listaPersonas.remove(aux);
             listaPersonas.add(aux, pers1);
