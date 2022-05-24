@@ -6,15 +6,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @RestController
+@RequestMapping("/persona")
 public class ControladorAñadir {
 
     @Autowired
-    ArrayList <Persona> listaPersonas;
+    ServicioPersona persona;
 
-    @PostMapping("/persona")
-    @RequestMapping(value = "/persona", method = RequestMethod.POST, consumes = "application/json")
+    @PostMapping
     public String añadir(@RequestBody Persona pers){
-        listaPersonas.add(pers);
+        persona.añadir(pers);
         return "OK";
     }
 

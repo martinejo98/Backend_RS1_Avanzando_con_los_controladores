@@ -12,11 +12,4 @@ public class Ejercicio6AvanzandoConLosControladoresApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(Ejercicio6AvanzandoConLosControladoresApplication.class, args);
 	}
-
-	@Bean
-	public ArrayList <Persona> listaPersonas(){
-		ArrayList <Persona> lista = new ArrayList<>();
-		return lista;
-	}
-
 }

@@ -6,47 +6,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-
 @RestController
+@RequestMapping("/persona")
 public class ControladorConsultar {
 
     @Autowired
-    ArrayList<Persona> listaPersonas;
+    ServicioPersona persona;
 
-    @GetMapping("/persona/{id}")
+    @GetMapping("/{id}")
     public String consultar(@PathVariable int id){
-        StringBuilder sb = new StringBuilder();
-        for(Persona p: listaPersonas){
-            if(p.getId()==id){
-                sb.append(p.getId());
-                sb.append(", ");
-                sb.append(p.getNombre());
-                sb.append(", ");
-                sb.append(p.getEdad());
-                sb.append(", ");
-                sb.append(p.getPoblacion());
-                sb.append("\n");
-            }
-        }
-        return sb+"";
+        return persona.consultar(id);
     }
 
-    @GetMapping("/persona/nombre/{nombre}")
+    @GetMapping("/nombre/{nombre}")
     public String consultar(@PathVariable String nombre){
-        StringBuilder sb = new StringBuilder();
-        for(Persona p: listaPersonas){
-            if(p.getNombre().equals(nombre)){
-                sb.append(p.getId());
-                sb.append(", ");
-                sb.append(p.getNombre());
-                sb.append(", ");
-                sb.append(p.getEdad());
-                sb.append(", ");
-                sb.append(p.getPoblacion());
-                sb.append("\n");
-            }
-        }
-        return sb+"";
+        return persona.consultar(nombre);
     }
 }
